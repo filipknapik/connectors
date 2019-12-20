@@ -1,0 +1,8 @@
+Foo:
+  Params: [x, y, z: 123]  # inline default value specification
+  Steps:
+  - sleep:
+    Call: Sleep         # calling Sleep follows the same syntax as calling a sub-workflow
+    Args: ${z}          # call with positional argument, sub-workflow argument access
+  - exit:
+    Return: ${y}        # returning a value from a sub-workflow
